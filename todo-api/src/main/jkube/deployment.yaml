@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-api
+  namespace: developer-todo-migrate
+spec:
+  template:
+    spec:
+      containers:
+      - env:
+        envFrom:
+          - configMapRef:
+              name: config-todo
